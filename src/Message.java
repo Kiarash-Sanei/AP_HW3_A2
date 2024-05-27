@@ -15,11 +15,18 @@ public enum Message {
     UNABLE_TO_DISCONNECT("Unable to end connection"),
     END_OF_CONNECTION("End of connection"),
     UNABLE_TO_LISTEN("Unable to start listening"),
-    UNABLE_TO_HANDLE("Unable to start handling");
+    UNABLE_TO_HANDLE("Unable to start handling"),
+    LOGIN("Login In"),
+    REGISTER("Register"),
+    LOGOUT("Logout"),
+    CHARGED("Charged"),
+    BOUGHT("Bought");
     private final String message;
+
     Message(String message) {
         this.message = message;
     }
+
     public String getMessage() {
         return message;
     }
