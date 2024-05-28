@@ -152,7 +152,7 @@ public class StoreServer extends Thread {
             dataOutputStream.writeInt(quantity);
     }
 
-    private void giveMoney() throws IOException {
+    private synchronized void giveMoney() throws IOException {
         if (currentCustomer == null)
             dataOutputStream.writeUTF(Message.NO_LOGIN.getMessage());
         else
@@ -170,7 +170,7 @@ public class StoreServer extends Thread {
         }
     }
 
-    private void buy(String quantityString, String productName) throws IOException {
+    private synchronized void buy(String quantityString, String productName) throws IOException {
         if (!isValidQuantity(quantityString))
             dataOutputStream.writeUTF(Message.INVALID_QUANTITY.getMessage());
         else if (!isValidProductName(productName))
@@ -275,7 +275,7 @@ class Customer {
         this.money = money;
     }
 
-    public int getMoney() {
+    public synchronized int getMoney() {
         return money;
     }
 
