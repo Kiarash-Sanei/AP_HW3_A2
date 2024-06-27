@@ -3,7 +3,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.*;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class StoreServer extends Thread {
     private static ArrayList<Product> inventory = new ArrayList<>();
